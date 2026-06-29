@@ -1,1 +1,3 @@
-# Python-10
+FuncMage
+
+# Master the Ancient Arts of Functional Programming
