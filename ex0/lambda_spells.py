@@ -1,12 +1,16 @@
 """Lambda Sanctum: mastering anonymous functions."""
 
+from typing import Any
 
-def artifact_sorter(artifacts: list[dict]) -> list[dict]:
+
+def artifact_sorter(artifacts: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """Sort artifacts by 'power' (descending) using a lambda key."""
     return sorted(artifacts, key=lambda a: a['power'], reverse=True)
 
 
-def power_filter(mages: list[dict], min_power: int) -> list[dict]:
+def power_filter(
+    mages: list[dict[str, Any]], min_power: int
+) -> list[dict[str, Any]]:
     """Keep only mages whose 'power' is >= min_power."""
     return list(filter(lambda m: m['power'] >= min_power, mages))
 
@@ -16,7 +20,7 @@ def spell_transformer(spells: list[str]) -> list[str]:
     return list(map(lambda s: f"* {s} *", spells))
 
 
-def mage_stats(mages: list[dict]) -> dict:
+def mage_stats(mages: list[dict[str, Any]]) -> dict[str, float]:
     """Return {'max_power', 'min_power', 'avg_power'} for the mages."""
     powers = list(map(lambda m: m['power'], mages))
     return {
